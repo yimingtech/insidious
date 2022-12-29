@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title></title>
+</head>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/underscore@1.13.1/underscore-umd-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@rokt33r/js-sequence-diagrams@2.0.6-2/dist/sequence-diagram-min.js"></script>
+
+
+
+<script src="https://unpkg.com/@antv/g6@2.1.0/build/g6.js"></script>
+<script src="https://unpkg.com/@antv/g6@2.1.0/build/plugin.tool.tooltip.js"></script>
+<script src="https://unpkg.com/@antv/g6@2.1.0/build/plugin.behaviour.analysis.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css" rel="stylesheet"></link>
+
+<body>
+  <a href="sequence?id=${id}">sequence diagram</a>
+  <div id="tree"></div>
+  <script src="../static/myjs/tree.js"></script>
+  <script>
+    drawNode("tree", "${id}")
+  </script>
+<script>
+
+</script>
+</body>
+</html>

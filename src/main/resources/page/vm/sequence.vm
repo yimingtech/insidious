@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title></title>
+</head>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/underscore@1.13.1/underscore-umd-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@rokt33r/js-sequence-diagrams@2.0.6-2/dist/sequence-diagram-min.js"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css" rel="stylesheet"></link>
+
+<body>
+  <a href="node?id=${id}">dependency diagram</a>
+  <div id="sequence"></div>
+  <script src="../static/myjs/sequence.js"></script>
+  <script>
+    drawSequence("sequence", "${id}")
+  </script>
+<script>
+
+</script>
+</body>
+</html>
