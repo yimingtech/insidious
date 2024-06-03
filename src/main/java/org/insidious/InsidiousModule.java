@@ -29,6 +29,7 @@ public class InsidiousModule extends ModuleDataHttp implements Module, LoadCompl
         new RedisListener(intercepter, watcher).getWatcher().withProgress(progress);
         new RocketMqListener(intercepter, watcher).getWatcher().withProgress(progress);
         new KafkaListener(intercepter, watcher).getWatcher().withProgress(progress);
+        new GRPCListener(intercepter, watcher).getWatcher().withProgress(progress);
     }
 
     @Override
