@@ -9,10 +9,10 @@ import java.lang.reflect.Method;
 
 public class GRPCListener extends BaseTraceListener {
 
-    private final String CLASS = "org.apache.dubbo.monitor.support.MonitorFilter";
+    private final String CLASS = "org.apache.rpc.monitor.support.MonitorFilter";
     private final String METHOD = "invoke";
 
-    private final String PATTERN = "org\\.apache\\.dubbo\\.rpc\\.proxy\\.(InvokerInvocationHandler|AbstractProxyInvoker)";
+    private final String PATTERN = "org\\.apache\\.rpc\\.proxy\\.(InvokerInvocationHandler|AbstractProxyInvoker)";
 
 
     public GRPCListener(ThreadCompressIntercepter intercepter, ModuleEventWatcher moduleEventWatcher) {
