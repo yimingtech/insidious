@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class TreeNode  extends NodeMeta {
+public class TreeNode extends NodeMeta {
 
     private TreeNode parent;
     private Integer invokeCnt = 1;
@@ -26,12 +26,13 @@ public class TreeNode  extends NodeMeta {
 
     private BlockingQueue<TreeNode> sons = new LinkedBlockingQueue<TreeNode>();
 
-    public TreeNode(long id, String params, long tid){
+    public TreeNode(long id, String params, long tid) {
         this(id, params);
         invokeCnt = 0;
         this.tid = tid;
         this.time = System.currentTimeMillis();
     }
+
     private TreeNode(long id, String params) {
         this.id = id;
         doing = true;
@@ -41,7 +42,7 @@ public class TreeNode  extends NodeMeta {
     public TreeNode addSon(long id, String params) {
         TreeNode son = new TreeNode(id, params);
         addInvoke();
-        son.parent =this;
+        son.parent = this;
         sons.add(son);
         return son;
     }
@@ -49,25 +50,27 @@ public class TreeNode  extends NodeMeta {
     public void addInvoke() {
         if (parent != null) {
             parent.addInvoke();
-        }else{
-            invokeCnt ++;
+        } else {
+            invokeCnt++;
         }
     }
 
     public void setDone(boolean err, long rt, String ret) {
-        this.err =err;
+        this.err = err;
         this.totalRt = rt;
         this.ret = ret;
         this.doing = false;
         this.ret = ret;
     }
 
-    public Long getTid(){
+    public Long getTid() {
         return tid;
     }
-    public Long getTime(){
+
+    public Long getTime() {
         return time;
     }
+
     public long getMid() {
         return id;
     }
@@ -87,10 +90,12 @@ public class TreeNode  extends NodeMeta {
     public Integer getInvokeCnt() {
         return invokeCnt;
     }
-    public String getParams(){
+
+    public String getParams() {
         return params;
     }
-    public String getRet(){
+
+    public String getRet() {
         return ret;
     }
 
@@ -141,8 +146,16 @@ public class TreeNode  extends NodeMeta {
         } finally {
             if (writer != null) {
                 writer.close();
+                System.out.println(node.getCurrentDoing());
             }
         }
 
+    }
+
+    public Integer getCurrentDoing() {
+        if (doing) {
+            return invokeCnt;
+        }
+        return 0;
     }
 }
